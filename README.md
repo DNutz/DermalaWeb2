@@ -1,7 +1,5 @@
 # DermalaWeb2
 
-One Paragraph of project description goes here
-
 DermalaWeb2 is the basis for a secondary community based website for Dermala Inc. The original intent behind this project was to simultaneously give UCSD students an opportunity for an internship in which they would be building a project that eventually Dermala would launch and build a website that would help teach people about the microbiome as well as giving them a space to discuss with others about microbiome-based products.
 
 ## Getting Started
@@ -54,19 +52,21 @@ to select features, then Enter to confirm your choices.
 2) Clone the githb repositiory into the firebase project folder.
 ```
 cd your_firebase_folder
-git clone this_repository's_url
+git clone https://github.com/DNutz/DermalaWeb2.git
 ```
 3) Read and learn how to use Amazon DynamoDB. You will need to mkae edits to the javascript files to direct them to use your database and account.
 
-    A. Setting Up DynamoDB -> Setting Up DynamoDB (Web Service)
+    1. Setting Up DynamoDB -> Setting Up DynamoDB (Web Service)
     https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html
-    B. Getting Started with DynamoDB -> JavaScript and DynamoDB
+
+    2. Getting Started with DynamoDB -> JavaScript and DynamoDB
     https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.JavaScript.html
-		- follow the 5 steps to help you learn the basics
-		- summary is important for getting it to work online
-    C. Configure AWS Credentials in Your Files Using Amazon Cognito 
-		- https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Cognito.Credentials.html
-		- follow steps to create Amazon Cognito Role so you don’t need to hard code your secret stuff
+	    1. follow the 5 steps to help you learn the basics
+	    2. summary is important for getting it to work online
+
+    3. Configure AWS Credentials in Your Files Using Amazon Cognito 
+	    1. https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Cognito.Credentials.html
+	    2. follow steps to create Amazon Cognito Role so you don’t need to hard code your secret stuff
 
 ## Backlog
 
