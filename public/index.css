@@ -1,0 +1,79 @@
+.carousel-inner > .item {
+    display: none
+}
+.carousel-inner > .active {
+    display: block
+}
+.carousel-caption > p {
+    font-size: larger;
+    color: black;
+    background-color: white;
+    display: block;
+    margin: auto;
+}
+.carousel-caption {
+    /*left: 30%;
+    right: 30%;
+    margin: 0 auto;*/
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+.carousel-indicators .active{
+    background-color: white;
+}
+.masthead {
+    background-color: #92c753 !important;
+    color: white;
+}
+header.masthead .header-content .header-content-inner p {
+    color: white;
+}
+header.masthead {
+    min-height: 300px;
+    height: 300px;
+}
+#services{
+    padding: 50px 0;
+}
+.navbar-brand{
+    font-size: 1.5rem
+}
+#circle1{
+    background-image: url("img/learn-circle.jpg");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+}
+#circle2{
+    background-image: url("img/discuss-circle.jpg");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+}
+#circle3{
+    background-image: url("img/research-circle2.jpg");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+}
+#circle4{
+    background-image: url("img/review-circle2.jpg");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+}
+.circle-text{
+    display: block;
+    color: inherit;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+}
+.circle-link{
+    color: black;
+}
+.circle-link:hover{
+   color: #92c753;
+}
+#products{
+    padding: 2rem;
+}
+.disabled {
+    color: rgba(0,0,0,.3) !important;
+}

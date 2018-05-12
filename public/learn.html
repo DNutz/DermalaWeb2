@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Learn</title>
+  <meta charset="utf-8">
+  <!-- <script src="/__/firebase/4.12.0/firebase-app.js"></script> -->
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="/css/creative.min.css" type="text/css">
+  <link rel="stylesheet" href="learn.css" type="text/css">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrollreveal.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="/js/creative.min.js"></script>
+  <script src="learn.js"></script>
+
+</head>
+
+<body id="page-top" onload="logCurrentPage();welcome();">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Microbiome Beauty Forum</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul id="nav-list" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href='learn.html'>Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='discuss.html'>Discuss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Research</a>
+            <!-- <a class="nav-link" href="research.html">Research</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Review</a>
+            <!-- <a class="nav-link" href="review.html">Review</a> -->
+          </li>
+          <li id="sign-in" class="nav-item">
+            <a class="nav-link" href='login.html'>Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <section class="bg-primary" id="learn">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">Microbiome Beauty Forum</h2>
+          <hr class="light">
+          <p class="text-faded">Learn about the microbiome</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <header class="masthead">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-lg-12 mx-auto text-center">
+          <h2 class="section-heading text-white">Microbiome Beauty Forum</h2>
+          <p>Learn about your microbiome and how you can protect your skin's health.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="tab">
+    <button class="tablinks active" id="MStab" onclick="tab1Select();">Microbiome and Skin</button>
+    <button class="tablinks" id="MAtab" onclick="tab2Select();">Microbiome and Acne</button>
+  </div>
+
+  <div class="tabContent container-fluid" id="Microbiome and Skin">
+    <div id="learn1" class="row color">
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">What Is the Microbiome?</h2>
+        <p>
+          The microbiome refers to all the living organisms present on your skin, which includes thousands of different types of bacteria.
+          Many of these bacteria are necessary to the health of our skin as they can not only help prevent infections, but
+          also promote radiant skin.
+        </p>
+      </div>
+      <div class="col-md-6 picture-area">
+        <!--<img src="/assetsimg/DermalaGirlBacteria2.png" style="width:100%;max-height:100%;">-->
+        <img src="img/DermalaGirlBacteria2.png" style="width:100%;">
+      </div>
+    </div>
+
+    <div id="learn2" class="row color">
+      <div class="col-md-6 picture-area">
+        <!--<img src="/assetsimg/stock-photo-two-human-figures-and-their-microbiome-458083078.jpg" style="width:719px;height:510px;">-->
+        <img src="img/stock-photo-two-human-figures-and-their-microbiome-2.jpg" style="width:100%;">
+      </div>
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">Why is it so important?</h2>
+        <p>
+          Many beauty products on the market are actually harming our microbiome and the health of our skin. Our skin is under constant
+          assault from an overuse of antibiotics and other cosmetic products; even soap can be harmful to our microbiome,
+          killing off a lot of our good bacteria.
+        </p>
+      </div>
+    </div>
+
+    <div id="learn3" class="row color">
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">What can we do?</h2>
+        <p>
+          Save your skin and switch to natural and biome-friendly products. Only a few companies like Dermala strive to protect your
+          microbiome with skincare and acne products that only contain natural ingredients, free from harmful agents.
+        </p>
+      </div>
+      <div class="col-md-6 picture-area">
+        <img src="img/DermalaProducts2.png" style="width:100%;">
+      </div>
+    </div>
+  </div>
+
+  <div class="tabContent container-fluid hidden" id="Microbiome and Acne">
+    <div id="learn1" class="row color">
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">Overview of Acne Pathogenesis</h2>
+        <p>
+          Acne occurs when glands in the follicles of the skin become overactive, producing more oil than needed. This oil along with
+          dead skin cells can form a plug that blocks the follicle. Bacteria that live on the skin – and which are usually
+          completely harmless – can then infect the plugged follicles, causing acne.
+        </p>
+      </div>
+      <div class="col-md-6 picture-area">
+        <img src="img/acne formation.jpg" style="width:100%;">
+      </div>
+    </div>
+
+    <div id="learn2" class="row color">
+      <div class="col-md-6 picture-area">
+        <img src="img/Types of acne.jpg" style="width:100%;">
+      </div>
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">Types of Acne</h2>
+        <ul>
+          <li>
+            <strong>Blackheads:</strong> Blackheads occur when a pore is clogged by a combination of sebum and dead skin cells. The
+            top of the pore stays open, despite the rest of it being clogged. This results in the characteristic black color
+            seen on the surface.</li>
+          <li>
+            <strong>Whiteheads:</strong> Whiteheads can also form when a pore gets clogged by sebum and dead skin cells. But unlike
+            with blackheads, the top of the pore closes up. It looks like a small bump protruding from the skin.</li>
+          <li>
+            <strong>Papules:</strong> Papules occur when the walls surrounding your pores break down from severe inflammation. This
+            results in hard, clogged pores that are tender to the touch. The skin around these pores is usually pink.</li>
+          <li>
+            <strong>Pustules:</strong> Pustules can also form when the walls around your pores break down. Unlike papules, pustules
+            are filled with pus. These bumps come out from the skin and are usually red in color. They often have yellow
+            or white heads on top.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="learn3" class="row color">
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">Association between Acne and P. Acnes Overgrowth</h2>
+        <p>
+          P. acnes bacteria live deep within follicles and pores, away from the surface of the skin. Elevated production of oil or
+          blockage of the follicle can cause P. acnes bacteria to grow and multiply. P. acnes bacteria secrete many proteins,
+          including several digestive enzymes, which can destabilize the walls of the follicle. The cellular damage, metabolic
+          byproducts and bacterial debris produced by the rapid growth of P. acnes in follicles can trigger inflammation,
+          which can lead to the symptoms associated with acne.
+        </p>
+      </div>
+      <div class="col-md-6 picture-area">
+        <img src="img/stock-vector-healthy-skin-and-whiteheads-407925475.jpg" style="width:100%;">
+      </div>
+    </div>
+
+    <div id="learn4" class="row color">
+      <div class="col-md-6 picture-area">
+        <img src="img/stock-photo-acne-printed-diagnosis-with-blurred-text-on-background-of-medicaments-composition-red-pills-273039821.jpg"
+          style="width:100%;">
+      </div>
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">How Acne is Typically Treated</h2>
+        <ul>
+          <li>
+            <strong>Benzoyl peroxide:</strong> It is an anti-bacterial that kills the P. Acnes bacteria that contribute to acne.
+          </li>
+          <li>
+            <strong>Salicylic acid:</strong> It is an exfoliant that can effectively penetrate and get rid of the material clogging
+            the pore.</li>
+          <li>
+            <strong>Note:</strong> These two are often used together because the salicylic acid clears the way for the benzoyl peroxide
+            to get into the pore and kill the bacteria.</li>
+          <li>
+            <strong>Retinoids:</strong> Retinoids are naturally occurring forms of Vitamin A. They fight breakouts by normalizing
+            the shedding of dead skin cells that clog pores.</li>
+          <li>
+            <strong>Antibiotics:</strong> These are used for moderate to severe acne and are only available through a physician.
+            Due to progressively worsening antibiotic resistance, antibiotics become less and less effective as acne treatments
+            over time.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="learn5" class="row color">
+      <div class="col-md-6 text-center text-area">
+        <h2 class="section-heading">Microbiome-based acne treatment options</h2>
+        <p>
+          Most acne treatments attack our microbiomes in order to get rid of the bad bacteria that cause acne. Microbiome-based acne
+          treatments aim to target only the bad bacteria and work with the good bacteria in order to maintain a healthy and
+          balanced microbiome. By doing this, these treatments not only help reduce acne but also avoid nasty side effects
+          such as itchy, red, sensitive or dry skin.
+        </p>
+      </div>
+      <div class="col-md-6 picture-area">
+        <img src="img/stock-photo-preparing-homemade-skincare-mask-with-natural-ingredients-bentonite-clay-rosemary-lemon-slice-571568611.jpg"
+          style="width:719px;height:510px;">
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Follow Us!</h2>
+          <hr class="primary">
+          <p>Check out what we are up to on</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fa fa-twitter fa-3x"></i>
+          <p>
+            <a href="https://twitter.com/DERMALAinc">Twitter</a>
+          </p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-facebook-official fa-3x"></i>
+          <p>
+            <a href="https://www.facebook.com/dermalainc">Facebook</a>
+          </p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-instagram fa-3x"></i>
+          <p>
+            <a href="https://www.instagram.com/dermala/">Instagram</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>

@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Discuss</title>
+  <meta charset="utf-8">
+  <!-- <script src="/__/firebase/4.12.0/firebase-app.js"></script> -->
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="/css/creative.min.css" type="text/css">
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.224.1.min.js"></script>
+  <link rel="stylesheet" href="discuss.css" type="text/css">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrollreveal.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="/js/creative.min.js"></script>
+  <script src="discuss.js"></script>
+</head>
+
+<body id="page-top" onload="topicInfo();logCurrentPage();welcome();">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Microbiome Beauty Forum</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul id="nav-list" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href='learn.html'>Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='discuss.html'>Discuss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Research</a>
+            <!-- <a class="nav-link" href="research.html">Research</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Review</a>
+            <!-- <a class="nav-link" href="review.html">Review</a> -->
+          </li>
+          <li id="sign-in" class="nav-item">
+            <a class="nav-link" href='login.html'>Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div id="joinUs" class="col-lg-12 mx-auto text-center">
+          <h2 class="section-heading text-white">Microbiome Beauty Forum</h2>
+          <p class="text-faded">Ask questions, post answers, and be part of relevant conversations with experts and the community.</p>
+          <a class="btn btn-default btn-xl" href="login.html">Join Us!</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <ol class="breadcrumb" style="margin-left: 15px; flex: 0 0 80%">
+        <li id="breadcrumb1" class="breadcrumb-item">
+          <button id="itembtn1" onclick="Topics();" class="btn btn-link">Topics</button>
+        </li>
+        <li id="breadcrumb2" class="breadcrumb-item hidden">
+          <button id="itembtn2" class="btn btn-link">Ask An Expert</button>
+        </li>
+      </ol>
+      <div class="breadcrumb" style="margin-right: 15px; flex: 0 0 17.8%">
+        <button id="createbtn" onclick="createTable();" class="btn btn-primary hidden" style="width: 100%">Create a post</button>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Discussion Forum</h3>
+          </div>
+          <table class="table" id="discussion-table">
+            <thead>
+              <tr>
+                <th id="th1">Topics</th>
+                <th id="th2"># of Posts</th>
+                <th id="th3">Recent Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <button onclick="AAE();" class="btn-link">Ask an Expert</button>
+                </td>
+                <td id="numposts1"></td>
+                <td id="date1"></td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="Skincare();" class="btn-link">Skincare</button>
+                </td>
+                <td id="numposts2"></td>
+                <td id="date2"></td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="Acne();" class="btn-link">Acne</button>
+                </td>
+                <td id="numposts3"></td>
+                <td id="date3"></td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="Microbiome();" class="btn-link">Microbiome</button>
+                </td>
+                <td id="numposts4"></td>
+                <td id="date4"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <template id="post-table">
+    <thead>
+      <tr>
+        <th id="th1">Posts</th>
+        <th id="th2">Author</th>
+        <th id="th3">Date</th>
+      </tr>
+    </thead>
+    <tbody id="post-table-body">
+    </tbody>
+  </template>
+  <template id="topic-table">
+    <thead>
+      <tr>
+        <th id="th1">Topics</th>
+        <th id="th2"># of Posts</th>
+        <th id="th3">Recent Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <button onclick="AAE();" class="btn-link">Ask an Expert</button>
+        </td>
+        <td id="numposts1"></td>
+        <td id="date1"></td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="Skincare();" class="btn-link">Skincare</button>
+        </td>
+        <td id="numposts2"></td>
+        <td id="date2"></td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="Acne();" class="btn-link">Acne</button>
+        </td>
+        <td id="numposts3"></td>
+        <td id="date3"></td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="Microbiome();" class="btn-link">Microbiome</button>
+        </td>
+        <td id="numposts4"></td>
+        <td id="date4"></td>
+      </tr>
+    </tbody>
+  </template>
+  <template id="create-table">
+    <thead>
+      <tr>
+        <th>
+          <h3>Create a Post</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <form name="createForm">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input id="title-input" type="text" class="form-control" name="title" maxlength="100" required/>
+            </div>
+            <div class="form-group">
+              <label for="content">Content</label>
+              <!-- <input id="content-input" type="text" class="form-control" name="content" required /> -->
+              <textarea name="content" id="content-input" rows="10"></textarea>
+            </div>
+            <div id="help" class="hidden help-block">You must be logged in to create a post</div>
+            <button class="btn btn-primary" onclick="createPost(); return false;">Submit</button>
+            <button class="btn btn-link" onclick="cancel(); return false;">Cancel</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </template>
+  <template id="post-row">
+    <tr>
+      <td>
+        <button id="postd1" class="btn-link">placeholder</button>
+      </td>
+      <td id="postd2">placeholder</td>
+      <td id="postd3">placeholder</td>
+    </tr>
+  </template>
+  <template id="post-view">
+    <thead>
+      <tr>
+        <th id="th1">No Title</th>
+        <th id="th2">No Author</th>
+        <th id="th3">No Date</th>
+      </tr>
+    </thead>
+    <tbody id="post-view-body">
+      <tr>
+        <td id="td1" colspan="3"></td>
+      </tr>
+    </tbody>
+  </template>
+</body>

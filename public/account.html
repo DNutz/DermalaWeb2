@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>My Account</title>
+  <meta charset="utf-8">
+  <script src="/__/firebase/4.12.0/firebase-app.js"></script>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="/css/creative.min.css" type="text/css">
+  <link rel="stylesheet" href="login.css" type="text/css">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrollreveal.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="/js/creative.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.224.1.min.js"></script>
+  <script src="account.js"></script>
+
+</head>
+
+<body id="page-top" onload="loadInfo(); welcome();">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Microbiome Beauty Forum</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul id="nav-list" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href='learn.html'>Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='discuss.html'>Discuss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Research</a>
+            <!-- <a class="nav-link" href="research.html">Research</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Review</a>
+            <!-- <a class="nav-link" href="review.html">Review</a> -->
+          </li>
+          <li id="sign-in" class="nav-item">
+            <a class="nav-link" href='login.html'>Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="centered" style="margin-top: 56px;">
+    <h2 style="margin-bottom: 15px">Account Details</h2>
+    <form name="form">
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <p id="email" style="display: inline"></p>
+      </div>
+      <div class="form-group">
+        <label for="password">Display Name:</label>
+        <p id="dname" style="display: inline"></p>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger" onclick="logout(); return false;" onmouseover="">Sign Out</button>
+        <button class="btn btn-link" onclick="location.href = sessionStorage.getItem('dermalaPage'); return false;">Back</button>
+      </div>
+    </form>
+  </div>
+
+</body>

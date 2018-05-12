@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <script src="/__/firebase/4.12.0/firebase-app.js"></script>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="/css/creative.min.css" type="text/css">
+  <link rel="stylesheet" href="login.css" type="text/css">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrollreveal.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="/js/creative.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.224.1.min.js"></script>
+  <script src="register.js"></script>
+</head>
+
+<body id="page-top" onload="welcome()">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Microbiome Beauty Forum</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul id="nav-list" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href='learn.html'>Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='discuss.html'>Discuss</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Research</a>
+            <!-- <a class="nav-link" href="research.html">Research</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" style="color: rgba(0,0,0,.3);">Review</a>
+            <!-- <a class="nav-link" href="review.html">Review</a> -->
+          </li>
+          <li id="sign-in" class="nav-item">
+            <a class="nav-link" href='login.html'>Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="centered" style="margin-top: 56px;">
+    <h2>Join us today!</h2>
+    <h6>To discuss and learn about healthy skincare</h6>
+    <form name="form">
+      <div class="form-group">
+        <label for="displayName">Display Name</label>
+        <input id="dname-input" type="text" class="form-control" name="displayName" required />
+        <div id="required1" class="hidden help-block">Display Name is required</div>
+        <div id="inUse2" class="hidden help-block">Display Name is already in use</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input id="email-input" type="text" class="form-control" name="email" required />
+        <div id="required3" class="hidden help-block">Valid Email Address is required</div>
+        <div id="inUse1" class="hidden help-block">Email Address is already in use</div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password-input" type="password" class="form-control" name="password" required />
+        <div id="required4" class="hidden help-block">Password is required</div>
+      </div>
+      <div class="form-group">
+        <button onclick="register(); return false;" class="btn btn-primary">Sign Up</button>
+        <!--<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+        />-->
+        <a href='login.html' class="btn btn-link">Cancel</a>
+      </div>
+    </form>
+    <!--<button onclick="createItem(); return false;" class="btn btn-primary">Create Item</button>-->
+  </div>
+</body>

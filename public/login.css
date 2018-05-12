@@ -1,0 +1,36 @@
+h2 {
+    padding-top: 25px;
+    margin-bottom: 5px;
+}
+h6 {
+    font-size: 0.9rem;
+}
+body {
+    background-color: #faf9f6;
+}
+button {
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background-color: #82b743;
+}
+.help-block {
+    color: red;
+}
+.hidden {
+    display: none;
+}
+.centered {
+    margin: auto;
+    max-width: 90%;
+}
+@media (min-width: 992px) {
+    .centered {
+        max-width: 66%;
+    }
+}
+@media (min-width: 1200px) {
+    .centered {
+        max-width: 50%;
+    }
+}
