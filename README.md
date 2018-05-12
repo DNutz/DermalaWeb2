@@ -119,7 +119,7 @@ Here are requests of the customers that have yet to be implemented as well as so
 ## Built With
 
 * [twbs](https://github.com/twbs/bootstrap) - A popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
-* [davegandy](http://fontawesome.io) - A popular icon set and toolkit.
+* [fontawesome](http://fontawesome.io) - A popular icon set and toolkit.
 * [jquery](https://jquery.com/) - Used to simplify javascript.
 * Some other ibraries, but honestly nearly all the javascript I wrote was in vanilla so you may be able to remove many
 
