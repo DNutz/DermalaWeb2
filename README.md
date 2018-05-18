@@ -54,7 +54,7 @@ to select features, then Enter to confirm your choices.
 cd your_firebase_folder
 git clone https://github.com/DNutz/DermalaWeb2.git
 ```
-3) Read and learn how to use Amazon DynamoDB. You will need to mkae edits to the javascript files to direct them to use your database and account.
+3) Read and learn how to use Amazon DynamoDB. You will need to make edits to the javascript files to direct them to use your database and account.
 
     1. Setting Up DynamoDB -> Setting Up DynamoDB (Web Service)
     https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html
@@ -67,6 +67,10 @@ git clone https://github.com/DNutz/DermalaWeb2.git
     3. Configure AWS Credentials in Your Files Using Amazon Cognito 
 	    1. https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Cognito.Credentials.html
 	    2. follow steps to create Amazon Cognito Role so you don’t need to hard code your secret stuff
+
+    4. Create two tables
+        1. DermalaPosts: Partition key = email (String) and no Sort key. Each item in this table has three values: email (String), dname (String), and password (String). 
+        2. DermalaLogin: Partition key = topic (String) and Sort key = date (Number). Each item in this table has six values: topic (String), date (Number), author (String), content (String), title (string), and comments (Array of objects that have content (String) and dname (String)). 
 
 ## Backlog
 
@@ -81,6 +85,7 @@ Here are requests of the customers that have yet to be implemented as well as so
     - Give accounts tagged as experts a special badge to show that they are an expert in the field
     - Allow users to respond to comments i.e. make the post/comments into a tree that can have a large finite number of levels or even infinite levels
     - Allow users to like posts and comments
+    - Add dates on the comments
     - Add a report or flag post feature for inappropriate responses
     - Allow users to attach images in their posts and comments
     - Can always try to improve the UI styling and flow

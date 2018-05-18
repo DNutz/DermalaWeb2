@@ -306,12 +306,12 @@ function showPost(position) {
     for (var i = 0; i < comments.length; i++) {
         tr = document.createElement("tr");
         td = document.createElement("td");
-        td.setAttribute("colspan", "1");
-        td.innerHTML = comments[i].dname;
+        td.setAttribute("colspan", "2");
+        td.innerHTML = comments[i].content.replace(/(?:\r\n|\r|\n)/g, '<br>');
         tr.appendChild(td);
         var td2 = document.createElement("td");
-        td2.setAttribute("colspan", "2");
-        td2.innerHTML = comments[i].content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+        td2.setAttribute("colspan", "1");
+        td2.innerHTML = "by "+comments[i].dname;
         tr.appendChild(td2);
         tbody.appendChild(tr);
     }
