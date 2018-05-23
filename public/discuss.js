@@ -1,9 +1,10 @@
 AWS.config.update({ region: "us-west-2" });
 
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: "us-west-2:536ec215-5b07-4fae-be00-b2003966883a",
-    RoleArn: "arn:aws:iam::140021010944:role/Cognito_DynamoPoolUnauth"
-});
+// TODO add your AWS account credentials here
+// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+//     IdentityPoolId: "",
+//     RoleArn: ""
+// });
 
 var dynamodb = new AWS.DynamoDB();
 var docClient = new AWS.DynamoDB.DocumentClient();
@@ -23,32 +24,17 @@ function readTopic(topic) {
             console.log(s);
         } else {
             s = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-            // alert(s);
             sessionStorage.setItem("dermalaPosts", JSON.stringify(data));
-            // sessionStorage.setItem("dermalaPostsPage", "1");
             postsarray = JSON.parse(sessionStorage.getItem("dermalaPosts")).Items;
-            // alert(postsarray[1].content);
-            // title = [];
-            // author = [];
-            // date = [];
-            // content = [];
             for (i = 0; i < postsarray.length; ++i) {
                 if (postsarray[i]) {
                     var title = postsarray[i].title;
                     var author = postsarray[i].author;
                     var date = postsarray[i].date;
-                    // var content = postsarray[i].content;
-                    // var comments = postsarray[i].comments;
                     var position = i;
-                    // var f = function() {showPost(JSON.parse(JSON.stringify(title)), JSON.parse(JSON.stringify(author)), JSON.parse(JSON.stringify(date)), JSON.parse(JSON.stringify(content)));};
                     clone = document.getElementById("post-row").content.cloneNode(true);
                     clone.getElementById("postd1").innerHTML = title;
-                    // clone.getElementById("postd1").setAttribute("title", title);
-                    // clone.getElementById("postd1").setAttribute("author", author);
-                    // clone.getElementById("postd1").setAttribute("date", date);
-                    // clone.getElementById("postd1").setAttribute("content", content);
                     clone.getElementById("postd1").setAttribute("position", position);
-                    // clone.getElementById("postd1").setAttribute("comments", comments);
                     clone.getElementById("postd1").onclick = function () { showPost(this.getAttribute("position")); };
                     clone.getElementById("postd2").innerHTML = author;
                     dateObject = new Date(date);
@@ -77,7 +63,6 @@ function topicInfo() {
             alert(s);
         } else {
             s = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-            // alert(s);
             document.getElementById("numposts1").innerHTML = data.Count;
             dateObject = new Date(data.Items[1].date);
             document.getElementById("date1").innerHTML = dateObject.toLocaleDateString() + " " + dateObject.toLocaleTimeString();
@@ -96,7 +81,6 @@ function topicInfo() {
             alert(s);
         } else {
             s = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-            // alert(s);
             document.getElementById("numposts2").innerHTML = data.Count;
             dateObject = new Date(data.Items[1].date);
             document.getElementById("date2").innerHTML = dateObject.toLocaleDateString() + " " + dateObject.toLocaleTimeString();
@@ -115,7 +99,6 @@ function topicInfo() {
             alert(s);
         } else {
             s = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-            // alert(s);
             document.getElementById("numposts3").innerHTML = data.Count;
             dateObject = new Date(data.Items[1].date);
             document.getElementById("date3").innerHTML = dateObject.toLocaleDateString() + " " + dateObject.toLocaleTimeString();
@@ -134,7 +117,6 @@ function topicInfo() {
             alert(s);
         } else {
             s = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-            // alert(s);
             document.getElementById("numposts4").innerHTML = data.Count;
             dateObject = new Date(data.Items[1].date);
             document.getElementById("date4").innerHTML = dateObject.toLocaleDateString() + " " + dateObject.toLocaleTimeString();
@@ -152,7 +134,6 @@ function Topics() {
     dtable.appendChild(clone);
     document.getElementById("createbtn").className = "btn btn-primary hidden";
     topicInfo();
-    //alert("Topics!");
 }
 
 function addPostTable() {
@@ -173,9 +154,6 @@ function addBreadcrumb(text, func) {
 function AAE() {
     addBreadcrumb("Ask an Expert", function () { AAE(); });
     addPostTable();
-    //now get posts from database and display them
-    //dtable.appendChild();
-    //alert("AAE!");
     document.getElementById("createbtn").className = "btn btn-primary";
     readTopic("Ask an Expert");
 }
@@ -183,7 +161,6 @@ function AAE() {
 function Skincare() {
     addBreadcrumb("Skincare", function () { Skincare(); });
     addPostTable();
-    //alert("Skincare!");
     document.getElementById("createbtn").className = "btn btn-primary";
     readTopic("Skincare");
 }
@@ -191,7 +168,6 @@ function Skincare() {
 function Acne() {
     addBreadcrumb("Acne", function () { Acne(); });
     addPostTable();
-    //alert("Acne!");
     document.getElementById("createbtn").className = "btn btn-primary";
     readTopic("Acne");
 }
@@ -199,7 +175,7 @@ function Acne() {
 function Microbiome() {
     addBreadcrumb("Microbiome", function () { Microbiome(); });
     addPostTable();
-    //alert("Microbiome!");
+    //alert("Microbiome!")
     document.getElementById("createbtn").className = "btn btn-primary";
     readTopic("Microbiome");
 }
@@ -234,13 +210,10 @@ function createPost() {
         };
         docClient.put(params, function (err, data) {
             if (err) {
-                //document.getElementById('textarea').innerHTML = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
                 s = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
                 alert(s);
             } else {
-                //document.getElementById('textarea').innerHTML = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
                 s = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-                // alert(s);
                 if (topic === "Ask an Expert") {
                     AAE();
                 }
@@ -295,7 +268,6 @@ function showPost(position) {
     td.appendChild(div);
     var btn = document.createElement("button");
     btn.className = "btn btn-primary";
-    // btn.onclick = "newComment(); return false;";
     btn.setAttribute("onclick", "newComment(); return false;");
     btn.innerHTML = "Comment";
     td.appendChild(btn);

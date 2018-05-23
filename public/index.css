@@ -12,9 +12,6 @@
     margin: auto;
 }
 .carousel-caption {
-    /*left: 30%;
-    right: 30%;
-    margin: 0 auto;*/
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)

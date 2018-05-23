@@ -79,9 +79,10 @@ Here are requests of the customers that have yet to be implemented as well as so
     As you can see in the navigation bar and on the homepage there are disabled links that are designed to lead to a research page. The idea for this page is to have a list view of new and relevent research and news articles on the microbiome. We talked about possibly using some connection to social media for this.
 
 2) Produt review page:
-    As you can see in the navigation bar and on the homepage there are disabled links that are designed to lead to a review page. The idea for this page is to have a Amazon-like view of skin care products, allow users to review them as well as show how they compare to microbiome products i.e. analytics to show which ones work faster or which ones have longer lasting results.
+    As you can see in the navigation bar and on the homepage there are disabled links that are designed to lead to a review page. The idea for this page is to have a Amazon-like view of skin care products, allowing users to review them. Also on this page we will want to  show how typical products compare to microbiome products i.e. analytics to show which ones work faster or which ones have longer lasting results.
 
 3) Improve the discussion forum:
+    - Improve navigation, currently new users will probably be use the browsers back button and be confused; perhaps add a back button somewhere to solve this problem
     - Give accounts tagged as experts a special badge to show that they are an expert in the field
     - Allow users to respond to comments i.e. make the post/comments into a tree that can have a large finite number of levels or even infinite levels
     - Allow users to like posts and comments
@@ -123,11 +124,11 @@ Here are requests of the customers that have yet to be implemented as well as so
 
 ## Built With
 
-* [twbs](https://github.com/twbs/bootstrap) - A popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
-* [fontawesome](http://fontawesome.io) - A popular icon set and toolkit.
+* [twitter bootstrap](https://github.com/twbs/bootstrap) - A popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
 * [jquery](https://jquery.com/) - Used to simplify javascript.
+* [fontawesome](http://fontawesome.io) - A popular icon set and toolkit.
 * Some other ibraries, but honestly nearly all the javascript I wrote was in vanilla so you may be able to remove many
 
 ## Authors
 
-* **Daniel Nuttall** - *Initial work* - [DNutz](https://github.com/Dnutz)
+* **Daniel Nuttall** - *Initial work* - [DNutz](https://github.com/Dnutz) - dcsnuttall@gmail.com

@@ -1,9 +1,10 @@
 AWS.config.update({ region: "us-west-2" });
 
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: "us-west-2:536ec215-5b07-4fae-be00-b2003966883a",
-    RoleArn: "arn:aws:iam::140021010944:role/Cognito_DynamoPoolUnauth"
-});
+// TODO Add your AWS credentials here
+// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+//     IdentityPoolId: "",
+//     RoleArn: ""
+// });
 
 var dynamodb = new AWS.DynamoDB();
 var docClient = new AWS.DynamoDB.DocumentClient();
@@ -27,7 +28,6 @@ function readItem() {
           document.getElementById("required1").className = "help-block";
       } else {
           s = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-          //alert(s);
           if (data.Item === undefined){
             document.getElementById("required1").className = "help-block";
           }

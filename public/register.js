@@ -22,13 +22,10 @@ function createItem() {
     };
     docClient.put(params, function (err, data) {
         if (err) {
-            //document.getElementById('textarea').innerHTML = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
             s = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
             console.log(s);
         } else {
-            //document.getElementById('textarea').innerHTML = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
             s = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
-            // alert("Account creation success!");
             location.href = "login.html";
         }
     });
@@ -43,8 +40,6 @@ function register() {
     email = document.getElementById("email-input").value;
     password = document.getElementById("password-input").value;
     dname = document.getElementById("dname-input").value;
-    //alert(email);
-    //alert(password);
     failed = false;
     if (validateEmail(email)) {
         document.getElementById("required3").className = "hidden help-block";
@@ -110,7 +105,6 @@ function available() {
             }
             else {
                 document.getElementById("inUse1").className = "hidden help-block";
-                // alert("email available");
                 //scan for display name
                 docClient.scan(params2, function (err, data) {
                     if (err) {
@@ -123,11 +117,9 @@ function available() {
                         if (data.Item !== undefined || data.Items[0] !== undefined) {
                             // dname already in use
                             document.getElementById("inUse2").className = "help-block";
-                            // alert("dname already in use");
                         }
                         else {
                             document.getElementById("inUse2").className = "hidden help-block";
-                            // alert("dname available");
                             createItem();
                         }
                     }
